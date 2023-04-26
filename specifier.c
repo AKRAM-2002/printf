@@ -126,7 +126,7 @@ int get_print_func(char *s, va_list ap, params_t *params)
  *Return: new pointer
  */
 
-int *get_width(char *s, params_t *params, va_list ap)
+char *get_width(char *s, params_t *params, va_list ap)
 {
 
     int d = 0;
