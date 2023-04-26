@@ -42,7 +42,7 @@ int print_int(va_list ap, params_t *params)
     else
         l = (int)va_arg(ap, int);
 
-    return (print_number(convert(1, 10, 0, params), params);
+    return (print_number(convert(1, 10, 0, params), params));
 }
 
 /**
@@ -82,7 +82,7 @@ int print_int(va_list ap, params_t *params)
 
      if (!params->minus_flag)
      {
-         if (params->precision != UNIT_MAX)
+         if (params->precision != UINT_MAX)
             for (i = 0; i < pad; i++)
                 sum += _putchar(*str++);
          else

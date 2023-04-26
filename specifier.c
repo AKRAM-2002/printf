@@ -9,7 +9,7 @@
 
 
 
-int (*get_specifier)(char *s))(va_list ap, params_t *params)
+int (*get_specifier)(char *s)(va_list ap, params_t *params)
 {
     specifier_t specifiers[] = {
         {"c", print_char},
@@ -27,8 +27,6 @@ int (*get_specifier)(char *s))(va_list ap, params_t *params)
         {"r", print_rev},
         {"R", print_ro13},
         {NULL, NULL}
-
-
     };
 
     int i = 0;
@@ -128,7 +126,7 @@ int get_print_func(char *s, va_list ap, params_t *params)
  *Return: new pointer
  */
 
-char *get_width(char *s, params_t *params, va_list ap)
+int *get_width(char *s, params_t *params, va_list ap)
 {
 
     int d = 0;
@@ -141,9 +139,11 @@ char *get_width(char *s, params_t *params, va_list ap)
     else
     {
         while(_isdigit(*s))
-            d = d * 10 + (*s++ - '0'); //Ascii code
+            d = d * 10 + (*s++ - '0');
     }
     params->width = d;
     return (s);
 }
+
+
 
